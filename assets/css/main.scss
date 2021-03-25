@@ -1,0 +1,69 @@
+$color1: #222;
+$linkColor: #007bff;
+$fontStack: 'Roboto', sans-serif;
+$fontStack2: 'Anton', sans-serif;
+$fontStack3: 'Caveat', cursive;
+
+html{scroll-behavior: smooth;}
+strong{font-weight: 600;}
+a{text-decoration: none; color:$linkColor;}
+* {box-sizing: border-box; transition: all .3s ease; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+::after, ::before {box-sizing: border-box;}
+
+body{font-family:$fontStack!important; color:$color1;}
+#app {float:left; width:100%;}
+.logo{max-width:200px; border-radius:50%; margin-bottom:30px; border: 3px solid #e20a64;}
+.container {float:left; width:100%; display:flex; min-height:100vh;}
+.leftSide{display:flex; align-items:center; justify-content:center; float:left; width:50%; background-color:#fbfbfb; padding:50px; box-shadow: 1px 1px 20px #e8e8e8; z-index: 2; position:relative;
+  .darkModeBtn{position: absolute; top: 10px; left: 10px; width: 30px; height: 30px; background-color: #222; border-radius: 50%;
+    span{position:absolute; left:0; top:10px; color:#222; font-size:12px; opacity:0; width:80px;}
+    &:hover{
+      span{opacity:1; left:35px;}
+    }
+  }
+  .content{float:left; width:100%; max-width:600px; text-align:center; font-size:22px;
+    .headline{float:left; width:100%; font-size:36px; letter-spacing: 5px; margin-bottom: 10px; font-family:$fontStack2;}
+    .description{float:left; width:100%; font-size:32px; margin-bottom: 30px; font-family:$fontStack3;}
+    .formWrap{float:left; width:100%; margin-bottom:20px;
+      .name{float:left; width:100%; font-size:16px; border:1px solid #ddd; border-radius:10px; padding: 20px; outline:0; margin-bottom:10px;}
+      .newGossip{float:left; width:100%; font-size:16px; line-height:22px; min-height: 190px; border:1px solid #ddd; border-radius:10px; padding: 20px; resize: none; outline:0; margin-bottom:20px; font-family:$fontStack;}
+      .send{float:left; width:100%; background-color:#007bff; color:#fff; font-size:16px; border-radius:10px; padding: 20px; outline:0; margin-bottom:30px; font-weight:600; letter-spacing:5px; border: 0;
+        cursor: pointer;
+        &:hover{background-color:#e11791;}
+      }
+    }
+    .gossipSuccessed{float:left; width:100%; font-size:40px; line-height:46px; margin-bottom: 10px; font-family:$fontStack3;}
+    .newGossipCounter{float: left; width: 100%; margin-bottom: 40px; font-size: 16px;}
+    .info{float:left; width:100%; font-size:13px; line-height:22px;}
+  }
+}
+.rightSide{display:flex; align-items:flex-start; justify-content:flex-start; flex-direction: column; float:left; width:50%; background-color:#f3f3f3; padding:50px 0 30px 50px; 
+  .headline{float:left; width:100%; font-size:38px; margin-bottom: 20px; font-family:$fontStack3;}
+  .gossips{float:left; width:100%; height:calc(100vh - 140px); overflow-y:scroll; padding-right: 40px;}
+  .gossip{float: left; width: 100%; margin-bottom: 30px; padding: 20px; background-color: #ffffff; border-radius: 10px;
+    .msg{float: left; width: 100%; font-size: 16px; line-height: 22px; margin-bottom: 10px;}
+    .dateName{float: left; width: 100%; font-size: 13px;
+      .name{font-weight:600; margin-right:5px;}
+    }
+  }
+}
+
+.darkMode{color:#fff;
+  .logo{border:3px solid #f1f1f1;}
+  .leftSide{background-color:#222; box-shadow: 1px 1px 20px #222;
+    .darkModeBtn{background-color:#fff;
+      span{color:#fff;}
+    }
+  }
+  .rightSide{background-color:#444;
+    .gossips {color:#222;}
+  }
+}
+
+@media (max-width:767px) {
+  .container{flex-direction: column;}
+  .leftSide{padding:20px; width:100%;}
+  .rightSide{padding:20px; width:100%;
+    .gossips{padding:0; height:auto; overflow-y:visible;}
+  }
+}

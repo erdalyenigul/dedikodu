@@ -1,0 +1,313 @@
+html {
+  scroll-behavior: smooth;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  color: #222;
+}
+
+#app {
+  float: left;
+  width: 100%;
+}
+
+.logo {
+  max-width: 200px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  border: 3px solid #e20a64;
+}
+
+.container {
+  float: left;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+}
+
+.leftSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  float: left;
+  width: 50%;
+  background-color: #fbfbfb;
+  padding: 50px;
+  -webkit-box-shadow: 1px 1px 20px #e8e8e8;
+          box-shadow: 1px 1px 20px #e8e8e8;
+  z-index: 2;
+  position: relative;
+}
+
+.leftSide .darkModeBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+.leftSide .darkModeBtn span {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #222;
+  font-size: 12px;
+  opacity: 0;
+  width: 80px;
+}
+
+.leftSide .darkModeBtn:hover span {
+  opacity: 1;
+  left: 35px;
+}
+
+.leftSide .content {
+  float: left;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.leftSide .content .headline {
+  float: left;
+  width: 100%;
+  font-size: 36px;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  font-family: "Anton", sans-serif;
+}
+
+.leftSide .content .description {
+  float: left;
+  width: 100%;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-family: "Caveat", cursive;
+}
+
+.leftSide .content .formWrap {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.leftSide .content .formWrap .name {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  outline: 0;
+  margin-bottom: 10px;
+}
+
+.leftSide .content .formWrap .newGossip {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+  line-height: 22px;
+  min-height: 190px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  resize: none;
+  outline: 0;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.leftSide .content .formWrap .send {
+  float: left;
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 20px;
+  outline: 0;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+.leftSide .content .formWrap .send:hover {
+  background-color: #e11791;
+}
+
+.leftSide .content .gossipSuccessed {
+  float: left;
+  width: 100%;
+  font-size: 40px;
+  line-height: 46px;
+  margin-bottom: 10px;
+  font-family: "Caveat", cursive;
+}
+
+.leftSide .content .newGossipCounter {
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.leftSide .content .info {
+  float: left;
+  width: 100%;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.rightSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  float: left;
+  width: 50%;
+  background-color: #f3f3f3;
+  padding: 50px 0 30px 50px;
+}
+
+.rightSide .headline {
+  float: left;
+  width: 100%;
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-family: "Caveat", cursive;
+}
+
+.rightSide .gossips {
+  float: left;
+  width: 100%;
+  height: calc(100vh - 140px);
+  overflow-y: scroll;
+  padding-right: 40px;
+}
+
+.rightSide .gossip {
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.rightSide .gossip .msg {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+.rightSide .gossip .dateName {
+  float: left;
+  width: 100%;
+  font-size: 13px;
+}
+
+.rightSide .gossip .dateName .name {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.darkMode {
+  color: #fff;
+}
+
+.darkMode .logo {
+  border: 3px solid #f1f1f1;
+}
+
+.darkMode .leftSide {
+  background-color: #222;
+  -webkit-box-shadow: 1px 1px 20px #222;
+          box-shadow: 1px 1px 20px #222;
+}
+
+.darkMode .leftSide .darkModeBtn {
+  background-color: #fff;
+}
+
+.darkMode .leftSide .darkModeBtn span {
+  color: #fff;
+}
+
+.darkMode .rightSide {
+  background-color: #444;
+}
+
+.darkMode .rightSide .gossips {
+  color: #222;
+}
+
+@media (max-width: 767px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .leftSide {
+    padding: 20px;
+    width: 100%;
+  }
+  .rightSide {
+    padding: 20px;
+    width: 100%;
+  }
+  .rightSide .gossips {
+    padding: 0;
+    height: auto;
+    overflow-y: visible;
+  }
+}
