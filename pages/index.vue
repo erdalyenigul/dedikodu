@@ -1,7 +1,7 @@
 <template>
   <div class="container" :class="{ darkMode : darkMode }">
     <div class="leftSide">
-      <a href="javascript:;" class="darkModeBtn" @click="darkMode = !darkMode">
+      <a href="javascript:;" class="darkModeBtn" @click="changeTheme()">
         <span v-if="!darkMode">Dark mod</span>
         <span v-if="darkMode">Light mod</span>
       </a>
@@ -26,7 +26,7 @@
           Dedikodu uçtu gitti, bunu herkes duymalıydı..
         </div>
         <div v-if="!timer" class="newGossipCounter">
-          <span>Yeni dedikodu için beklemen gereken süre: {{ minutes }}:{{ seconds }}</span>
+          Yeni dedikodu için beklemen gereken süre: <span>{{ minutes }}:{{ seconds }}</span> Az kaldı..
         </div>
         <span class="info">
           İsim vermeden tamamen anonim bir şekilde dedikodu yayabilirsin, en azından içinde kalmaz. Arkadaşlarınla paylaşabilirsin. Kimin yazdığı belli değil sonuçta :)
@@ -80,8 +80,13 @@ export default {
   },
   mounted () {
     this.getGossips()
+    this.darkMode = localStorage.dark === 'true'
   },
   methods: {
+    changeTheme () {
+      this.darkMode = !this.darkMode
+      this.darkMode ? localStorage.setItem('dark', 'true') : localStorage.setItem('dark', 'false')
+    },
     setTimer () {
       window.setInterval(() => {
         if ((new Date()).getTime() > this.countdownDate.getTime()) {
@@ -109,7 +114,7 @@ export default {
     },
     newGossip () {
       const d = new Date()
-      this.countdownDate = new Date(d.getTime() + 1 * 10000)
+      this.countdownDate = new Date(d.getTime() + 1 * 60000)
       window.setInterval(() => {
         this.now = Math.trunc((new Date()).getTime() / 1000)
       }, 1000)
