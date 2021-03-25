@@ -76,12 +76,6 @@ export default {
     },
     minutes () {
       return Math.trunc((this.dateInMilliseconds - this.now) / 60) % 60
-    },
-    hours () {
-      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60) % 24
-    },
-    days () {
-      return Math.trunc((this.dateInMilliseconds - this.now) / 60 / 60 / 24)
     }
   },
   mounted () {

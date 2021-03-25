@@ -1,4 +1,5 @@
 export default {
+  target: 'static',
   head: {
     title: 'Dedikodu Yay! İçinde tutma, şişersin. Yaz gitsin :)',
     meta: [
@@ -7,7 +8,6 @@ export default {
       { hid: 'description', name: 'description', content: 'Dedikodu Yay! İçinde tutma, şişersin. Yaz gitsin :)' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Anton&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Caveat&display=swap' }
