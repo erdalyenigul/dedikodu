@@ -14,7 +14,7 @@ body{font-family:$fontStack!important; color:$color1;}
 #app {float:left; width:100%;}
 .logo{max-width:200px; border-radius:50%; margin-bottom:30px; border: 3px solid #e20a64;}
 .container {float:left; width:100%; display:flex; min-height:100vh;}
-.leftSide{display:flex; align-items:center; justify-content:center; float:left; width:50%; background-color:#fbfbfb; padding:50px; box-shadow: 1px 1px 20px #e8e8e8; z-index: 2; position:relative;
+.leftSide{display:flex; align-items:flex-start; justify-content:center; float:left; width:50%; background-color:#fbfbfb; padding:25px 50px; box-shadow: 1px 1px 20px #e8e8e8; z-index: 2; position:relative;
   .darkModeBtn{position: absolute; top: 10px; left: 10px; width: 30px; height: 30px; background-color: #222; border-radius: 50%;
     span{position:absolute; left:0; top:10px; color:#222; font-size:12px; opacity:0; width:80px;}
     &:hover{
@@ -23,11 +23,12 @@ body{font-family:$fontStack!important; color:$color1;}
   }
   .content{float:left; width:100%; max-width:600px; text-align:center; font-size:22px;
     .headline{float:left; width:100%; font-size:36px; letter-spacing: 5px; margin-bottom: 10px; font-family:$fontStack2;}
-    .description{float:left; width:100%; font-size:32px; margin-bottom: 30px; font-family:$fontStack3;}
-    .formWrap{float:left; width:100%; margin-bottom:20px;
-      .name{float:left; width:100%; font-size:16px; border:1px solid #ddd; border-radius:10px; padding: 20px; outline:0; margin-bottom:10px;}
-      .newGossip{float:left; width:100%; font-size:16px; line-height:22px; min-height: 190px; border:1px solid #ddd; border-radius:10px; padding: 20px; resize: none; outline:0; margin-bottom:20px; font-family:$fontStack;}
-      .send{float:left; width:100%; background-color:#007bff; color:#fff; font-size:16px; border-radius:10px; padding: 20px; outline:0; margin-bottom:30px; font-weight:600; letter-spacing:5px; border: 0;
+    .description{float:left; width:100%; font-size:32px; margin-bottom:20px; font-family:$fontStack3;}
+    form{float:left; width:100%; margin-bottom:20px;}
+    .formWrap{float:left; width:100%;
+      .name{float:left; width:100%; font-size:16px; border:1px solid #ddd; border-radius:5px; padding:10px 20px; outline:0; margin-bottom:10px;}
+      .newGossip{float:left; width:100%; font-size:16px; line-height:22px; min-height: 190px; border:1px solid #ddd; border-radius:5px; padding: 20px; resize: none; outline:0; margin-bottom:20px; font-family:$fontStack;}
+      .send{float:left; width:100%; background-color:#007bff; color:#fff; font-size:16px; border-radius:10px; padding: 20px; outline:0; font-weight:600; letter-spacing:5px; border: 0;
         cursor: pointer;
         &:hover{background-color:#e11791;}
       }
@@ -37,7 +38,7 @@ body{font-family:$fontStack!important; color:$color1;}
     .info{float:left; width:100%; font-size:13px; line-height:22px;}
   }
 }
-.rightSide{display:flex; align-items:flex-start; justify-content:flex-start; flex-direction: column; float:left; width:50%; background-color:#f3f3f3; padding:50px 0 30px 50px; 
+.rightSide{display:flex; align-items:flex-start; justify-content:flex-start; flex-direction: column; float:left; width:50%; background-color:#f3f3f3; padding:25px 0 25px 50px; 
   .headline{float:left; width:100%; font-size:38px; margin-bottom: 20px; font-family:$fontStack3;}
   .gossips{float:left; width:100%; height:calc(100vh - 140px); overflow-y:scroll; padding-right: 40px;}
   .gossip{float: left; width: 100%; margin-bottom: 30px; padding: 20px; background-color: #ffffff; border-radius: 10px;

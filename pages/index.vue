@@ -6,14 +6,14 @@
         <span v-if="darkMode">Light mod</span>
       </a>
       <div class="content">
+        <img class="logo" src="@/assets/images/head.jpg" alt="Dedikodu Yay">
+        <h1 class="headline">
+          Dedikodu Yay!
+        </h1>
+        <h2 class="description">
+          İçinde tutma, şişersin. Yay gitsin :)
+        </h2>
         <form @submit.prevent="newGossip()">
-          <img class="logo" src="@/assets/images/head.jpg" alt="Dedikodu Yay">
-          <h1 class="headline">
-            Dedikodu Yay!
-          </h1>
-          <h2 class="description">
-            İçinde tutma, şişersin. Yaz gitsin :)
-          </h2>
           <div v-if="!postSent" class="formWrap">
             <input v-model="name" class="name" type="text" placeholder="İsim? (Zorunlu değil, salla gitsin)">
             <textarea v-model="gossip" maxlength="500" required class="newGossip" placeholder="Ne olmuş, ne demiş ki?" />
@@ -21,14 +21,16 @@
               YAY GİTSİN
             </button>
           </div>
-          <div v-if="postSent" class="gossipSuccessed">
-            Dedikodu uçtu gitti, bunu herkes duymalıydı..
-          </div>
-          <div v-if="!timer" class="newGossipCounter">
-            <span>Yeni dedikodu için beklemen gereken süre: {{ minutes }}:{{ seconds }}</span>
-          </div>
         </form>
-        <span class="info">İsim vermeden tamamen anonim bir şekilde dedikodu yayabilirsin, en azından içinde kalmaz. Arkadaşlarınla paylaşabilirsin. Kimin yazdığı belli değil sonuçta :)</span>
+        <div v-if="postSent" class="gossipSuccessed">
+          Dedikodu uçtu gitti, bunu herkes duymalıydı..
+        </div>
+        <div v-if="!timer" class="newGossipCounter">
+          <span>Yeni dedikodu için beklemen gereken süre: {{ minutes }}:{{ seconds }}</span>
+        </div>
+        <span class="info">
+          İsim vermeden tamamen anonim bir şekilde dedikodu yayabilirsin, en azından içinde kalmaz. Arkadaşlarınla paylaşabilirsin. Kimin yazdığı belli değil sonuçta :)
+        </span>
       </div>
     </div>
     <div class="rightSide">
@@ -126,6 +128,8 @@ export default {
       }).then(() => {
         this.postSent = true
         this.setTimer()
+        this.name = ''
+        this.gossip = ''
       })
     }
   }
