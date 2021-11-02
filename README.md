@@ -1,6 +1,7 @@
 # dedikoduyay
 
 ## https://dedikoduyay.web.app/
+## https://dedikodu.vercel.app/
 
 ## Build Setup
 
