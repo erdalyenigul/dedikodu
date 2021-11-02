@@ -81,6 +81,11 @@ export default {
   mounted () {
     this.getGossips()
     this.darkMode = localStorage.dark === 'true'
+    // if (localStorage.nextMsgTime > new Date()) {
+    //   console.log('bekle')
+    // } else {
+    //   console.log('yeni mesaj atılabilir')
+    // }
   },
   methods: {
     changeTheme () {
@@ -114,7 +119,8 @@ export default {
     },
     newGossip () {
       const d = new Date()
-      this.countdownDate = new Date(d.getTime() + 1 * 60000)
+      this.countdownDate = new Date(d.getTime() + 1 * 5000)
+      // localStorage.setItem('nextMsgTime', this.countdownDate)
       window.setInterval(() => {
         this.now = Math.trunc((new Date()).getTime() / 1000)
       }, 1000)
